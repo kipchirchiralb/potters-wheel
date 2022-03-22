@@ -29,7 +29,10 @@ header {
   background-color: #47b8b8;
   color: #000;
   padding: 10px 0;
-  height: fit-content;
+  /* height: 10vh; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   justify-self: flex-start;
 }
 nav {
@@ -61,14 +64,12 @@ nav {
 
 footer {
   background-color: #f2f2f2;
-  height: fit-content;
-  position: fixed;
-  bottom: 0;
+  height: 5vh;
+  /* margin-top: auto; */
   width: 100%;
   padding: 10px 0;
   text-align: center;
   border-top: 1px solid #c4c1c1;
-  border-bottom: 1px solid #c4c1c1;
   color: #47b8b8;
   justify-self: flex-end;
 }
@@ -76,7 +77,7 @@ footer {
 /* main */
 
 main {
-  height: 400px;
+  height: 75vh;
   flex: 1;
   display: flex;
   align-items: center;
@@ -84,14 +85,14 @@ main {
 }
 
 .home {
-  margin: 10px 0;
   display: flex;
+  height: 75vh;
   align-items: center;
   width: 100%;
 }
 .home img {
-  /* height: 300px; */
-  width: 50%;
+  height: 300px;
+  /* width: 50%; */
 }
 
 .home div {
@@ -109,10 +110,14 @@ main {
   padding: 20px 0;
   width: 100%;
   text-align: center;
-  padding-bottom: 60px;
-}
-
-.project {
+  /* align-items: stretch; */
+  /* padding-bottom: 60px; */
+  height: 100%;
+  /* grow with parent */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .project img {
@@ -127,7 +132,6 @@ main {
 .slidein {
   position: absolute;
   top: 0;
-
   left: 130%;
   animation: slidein 2s forwards;
   /* animation-delay: 0.5s; */
@@ -138,6 +142,37 @@ main {
   left: 0;
   animation: slideout 2s forwards;
   /* animation-delay: 0.5s; */
+}
+
+@media screen and (max-width: 465px) {
+  .container {
+    padding: 0 20px;
+  }
+  #logo {
+    font-size: 21px;
+  }
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav-link {
+    font-size: 20px;
+  }
+  .home {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .home img {
+    width: 80vw;
+  }
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+    border: 1px solid black;
+  }
+
+  .project img {
+    height: 200px;
+  }
 }
 
 @keyframes slidein {
